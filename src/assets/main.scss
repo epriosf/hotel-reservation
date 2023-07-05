@@ -1,0 +1,9 @@
+@import 'base.scss';
+@import "style.scss";
+body {
+  background-color: $background-primary-color;
+  font-family: sans-serif;
+}
+h1 {
+  color: $background-secondary-color;
+}
