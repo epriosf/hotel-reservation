@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import HelloWorld from '../HelloWorld.vue'
+import HotelSystem from '../HotelSystem.vue'
 
-describe('HelloWorld', () => {
+describe('Hotel Reservation System', () => {
   it('renders properly', () => {
-    const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
-    expect(wrapper.text()).toContain('Hello Vitest')
+    const wrapper = mount(HotelSystem, { props: { msg: 'Hotel Reservation System' } })
+    expect(wrapper.text()).toContain('Hotel Reservation System')
   })
 })

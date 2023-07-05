@@ -1,9 +1,7 @@
 <script setup lang="ts">
+import HotelSystem from "@/components/HotelSystem.vue";
 </script>
 
 <template>
-   <h1>Hotel Reservation System </h1>
+  <hotel-system></hotel-system>
 </template>
-<style lang="scss">
-@import "./../assets/main.scss";
-</style>
