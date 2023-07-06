@@ -3,14 +3,20 @@ import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import HotelCardInformation from '@/components/HotelCard/HotelCardInformation.vue'
 import TheRating from '@/components/TheRating.vue'
+interface Hotel {
+  name: string
+  location: string
+  rate: number
+  phone: string
+  website: string
+  weekdayPrice: number[]
+  weekendPrice: number[]
+}
 defineProps({
-  name: { type: String, required: true },
-  location: { type: String, required: true },
-  rate: { type: Number, required: true },
-  phone: { type: String, required: true },
-  website: { type: String, required: true },
-  weekdayPrice: { type: Array as number[], required: true },
-  weekendPrice: { type: Array as number[], required: true }
+  hotel: {
+    type: Object as () => Hotel,
+    required: true
+  }
 })
 </script>
 <template>
@@ -19,14 +25,14 @@ defineProps({
       <img src="../../assets/hotel3.jpg" alt="photo" class="image" />
     </template>
     <template #info>
-      <div class="name">{{ name }}</div>
-      <TheRating :rate="rate" />
+      <div class="name">{{ hotel.name }}</div>
+      <TheRating :rate="hotel.rate" />
       <HotelCardInformation
-        :location="location"
-        :phone="phone"
-        :website="website"
-        :weekdayPrice="weekdayPrice"
-        :weekendPrice="weekendPrice"
+        :location="hotel.location"
+        :phone="hotel.phone"
+        :website="hotel.website"
+        :weekdayPrice="hotel.weekdayPrice"
+        :weekendPrice="hotel.weekendPrice"
       />
     </template>
     <template #price>

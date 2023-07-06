@@ -3,8 +3,8 @@ defineProps({
   location: { type: String, required: true },
   phone: { type: String, required: true },
   website: { type: String, required: true },
-  weekdayPrice: { type: Array as number[], required: true },
-  weekendPrice: { type: Array as number[], required: true }
+  weekdayPrice: { type: Array as () => number[], required: true },
+  weekendPrice: { type: Array as () => number[], required: true }
 })
 </script>
 <template>

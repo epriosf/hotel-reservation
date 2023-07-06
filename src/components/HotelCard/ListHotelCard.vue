@@ -9,15 +9,7 @@ const hotels = computed(() => hotelStore.hotels)
 <template>
   <div class="grid-container">
     <div class="grid-item" v-for="hotel in hotels" :key="hotel.id">
-      <HotelCard
-        :name="hotel.name"
-        :location="hotel.location"
-        :rate="hotel.rate"
-        :phone="hotel.phone"
-        :website="hotel.website"
-        :weekdayPrice="hotel.weekdayPrice"
-        :weekendPrice="hotel.weekendPrice"
-      ></HotelCard>
+      <HotelCard :hotel="hotel"></HotelCard>
     </div>
   </div>
 </template>
