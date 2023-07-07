@@ -19,6 +19,7 @@ $column-width: calc(100% / 3);
 $row-height: 800px;
 
 .grid-container {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: $row-height;

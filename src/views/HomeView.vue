@@ -2,6 +2,7 @@
 import HotelSystem from '@/components/HotelSystem.vue'
 import ListCard from '@/components/HotelCard/ListHotelCard.vue'
 import { getLowestCostHotelWithBestRating } from '@/models/hotel/HotelService'
+import DatePicker from '@/components/DatePicker.vue'
 const date1 = new Date('2023-07-09')
 const dates: Date[] = []
 dates.push(date1)
@@ -17,5 +18,6 @@ if (lowestCostHotel) {
 
 <template>
   <hotel-system></hotel-system>
+  <DatePicker />
   <ListCard></ListCard>
 </template>
