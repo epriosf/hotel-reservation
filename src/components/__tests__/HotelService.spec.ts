@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { getHotels, getLowestCostHotelWithBestRating } from '../../models/hotel/HotelService'
 describe('Hotel Services tests', () => {
   describe('Get a list of Hotels', () => {
-    it('Return the list of hotels with the correct properties', () => {
+    it('should return the list of hotels with the correct properties', () => {
       // Call the method
       const hotels = getHotels()
 
@@ -81,7 +81,11 @@ describe('Hotel Services tests', () => {
     })
     it('should return the lowest and best rate hotel for multiple dates and a reward user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023/07/07'), new Date('2023/07/08'), new Date('2023/07/06')]
+      const bookingDates: Date[] = [
+        new Date('2023/07/07'),
+        new Date('2023/07/08'),
+        new Date('2023/07/06')
+      ]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'reward'
 
