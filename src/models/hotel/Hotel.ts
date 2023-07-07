@@ -28,7 +28,6 @@ export class Hotel {
     this._weekendPrice = weekendPrice
   }
 
-  // Getter and setter for id
   get id(): string {
     return this._id
   }
@@ -37,7 +36,6 @@ export class Hotel {
     this._id = value
   }
 
-  // Getter and setter for name
   get name(): string {
     return this._name
   }
@@ -46,7 +44,6 @@ export class Hotel {
     this._name = value
   }
 
-  // Getter and setter for location
   get location(): string {
     return this._location
   }
@@ -55,7 +52,6 @@ export class Hotel {
     this._location = value
   }
 
-  // Getter and setter for phone
   get phone(): string {
     return this._phone
   }
@@ -64,7 +60,6 @@ export class Hotel {
     this._phone = value
   }
 
-  // Getter and setter for website
   get website(): string {
     return this._website
   }
@@ -73,7 +68,6 @@ export class Hotel {
     this._website = value
   }
 
-  // Getter and setter for rate
   get rate(): number {
     return this._rate
   }
@@ -82,7 +76,6 @@ export class Hotel {
     this._rate = value
   }
 
-  // Getter and setter for weekdayPrice
   get weekdayPrice(): number[] {
     return this._weekdayPrice
   }
@@ -91,17 +84,11 @@ export class Hotel {
     this._weekdayPrice = value
   }
 
-  // Getter and setter for weekendPrice
   get weekendPrice(): number[] {
     return this._weekendPrice
   }
 
   set weekendPrice(value: number[]) {
     this._weekendPrice = value
-  }
-
-  // Method to get a hotel by id
-  static getHotelById(hotels: Hotel[], id: string): Hotel | undefined {
-    return hotels.find((hotel) => hotel.id === id)
   }
 }

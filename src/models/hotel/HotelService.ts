@@ -1,7 +1,6 @@
 import type { Hotel } from '@/models/hotel/Hotel'
-import type { HotelInfo } from '@/interfaces/HotelInfo'
 import { HotelFactory } from '@/models/hotel/HotelFactory'
-export const getHotels = (): HotelInfo[] => {
+export const getHotels = (): Hotel[] => {
   const hotelFactory = new HotelFactory()
   const bridgewoodHotel: Hotel = hotelFactory.createHotel(
     '1',
@@ -34,45 +33,36 @@ export const getHotels = (): HotelInfo[] => {
     [220, 100],
     [150, 40]
   )
-  const hotels: Hotel[] = [bridgewoodHotel, lakewoodHotel, ridgewoodHotel]
-
-  return hotels.map(({ id, name, location, phone, website, rate, weekdayPrice, weekendPrice }) => ({
-    id,
-    name,
-    location,
-    phone,
-    website,
-    rate,
-    weekdayPrice,
-    weekendPrice
-  }))
+  return [bridgewoodHotel, lakewoodHotel, ridgewoodHotel]
 }
 
 export const getLowestCostHotelWithBestRating = (
   dates: Date[],
   userType: 'reward' | 'regular'
-): [HotelInfo | undefined, number] => {
-  const hotels: HotelInfo[] = getHotels()
+): [Hotel | undefined, number] => {
+  const SUNDAY = 0
+  const SATURDAY = 6
+  const hotels: Hotel[] = getHotels()
   if (dates.length === 0) {
     return [undefined, Infinity]
   }
   let lowestCost = Infinity
-  let lowestCostHotel: HotelInfo | undefined
+  let lowestCostHotel: Hotel | undefined
   let bestRating = 0
-  for (const hotel of hotels) {
+
+  hotels.forEach((hotel) => {
     let totalCost = 0
-    for (const date of dates) {
-      const isWeekend = date.getDay() === 0 || date.getDay() === 6 // Sunday = 0, Saturday = 6
+    dates.forEach((date) => {
+      const isWeekend = date.getDay() === SUNDAY || date.getDay() === SATURDAY
       const price = isWeekend ? hotel.weekendPrice : hotel.weekdayPrice
       const cost = userType === 'regular' ? price[0] : price[1]
       totalCost += cost
-    }
+    })
     if (totalCost < lowestCost || (totalCost === lowestCost && hotel.rate > bestRating)) {
       lowestCost = totalCost
       lowestCostHotel = hotel
       bestRating = hotel.rate
     }
-  }
-
+  })
   return [lowestCostHotel, lowestCost]
 }
