@@ -3,7 +3,7 @@ import HotelCard from '@/components/HotelCard/HotelCard.vue'
 import { useHotelStore } from '@/stores/hotel'
 import { computed } from 'vue'
 const hotelStore = useHotelStore()
-const hotels = computed(() => hotelStore.hotels)
+const hotels = computed(() => hotelStore.getHotels())
 </script>
 
 <template>
