@@ -9,7 +9,7 @@ export const getHotels = (): HotelInfo[] => {
     'Miami',
     '123-456-7890',
     'https://www.hoteLakewood.com',
-    5,
+    3,
     [110, 80],
     [90, 80]
   )
@@ -30,7 +30,7 @@ export const getHotels = (): HotelInfo[] => {
     'Miami',
     '987-654-3210',
     'https://www.hotelRidgewood.com',
-    4,
+    5,
     [220, 100],
     [150, 40]
   )
@@ -61,7 +61,6 @@ export const getLowestCostHotelWithBestRating = (
   let bestRating = 0
   for (const hotel of hotels) {
     let totalCost = 0
-
     for (const date of dates) {
       const isWeekend = date.getDay() === 0 || date.getDay() === 6 // Sunday = 0, Saturday = 6
       const price = isWeekend ? hotel.weekendPrice : hotel.weekdayPrice

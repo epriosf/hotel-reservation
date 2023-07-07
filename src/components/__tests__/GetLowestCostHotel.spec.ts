@@ -27,7 +27,7 @@ describe('Hotel Services tests', () => {
   describe('Get lowest cost and hotel or best rated hotel', () => {
     it('should return the lowest cost and hotel for a weekday date and reward user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023-07-06')]
+      const bookingDates: Date[] = [new Date('2023/07/06')]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'reward'
 
@@ -41,7 +41,7 @@ describe('Hotel Services tests', () => {
     })
     it('should return the lowest cost and hotel for a weekend date and reward user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023-07-09')]
+      const bookingDates: Date[] = [new Date('2023/07/09')]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'reward'
 
@@ -54,7 +54,7 @@ describe('Hotel Services tests', () => {
     })
     it('should return the lowest cost and hotel for a weekend date and regular user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023-07-09')]
+      const bookingDates: Date[] = [new Date('2023/07/09')]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'regular'
 
@@ -67,7 +67,7 @@ describe('Hotel Services tests', () => {
     })
     it('should return the lowest cost and hotel for a weekday date and regular user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023-07-07')]
+      const bookingDates: Date[] = [new Date('2023/07/07')]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'regular'
 
@@ -81,7 +81,7 @@ describe('Hotel Services tests', () => {
     })
     it('should return the lowest and best rate hotel for multiple dates and a reward user', () => {
       //Test setup
-      const bookingDates: Date[] = [new Date('2023-07-07'), new Date('2023-07-08')]
+      const bookingDates: Date[] = [new Date('2023/07/07'), new Date('2023/07/08'), new Date('2023/07/06')]
       const dates: Date[] = bookingDates
       const userType: 'reward' | 'regular' = 'reward'
 
@@ -90,8 +90,8 @@ describe('Hotel Services tests', () => {
 
       //Perform assertions
       expect(hotel).toBeDefined()
-      expect(hotel?.name).toBe('Lakewood')
-      expect(cost).toBe(160)
+      expect(hotel?.name).toBe('Ridgewood')
+      expect(cost).toBe(240)
     })
     it('should return undefined hotel and Infinity cost when no dates are provided', () => {
       //Test setup
