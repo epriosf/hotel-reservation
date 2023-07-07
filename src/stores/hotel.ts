@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { createHotels } from '@/services/HotelService'
+import { getHotels } from '@/models/hotel/HotelService'
 import type { HotelInfo } from '@/interfaces/HotelInfo'
 export const useHotelStore = defineStore('hotel', {
   state: (): { hotels: HotelInfo[] } => {
@@ -12,7 +12,7 @@ export const useHotelStore = defineStore('hotel', {
   },
   actions: {
     getHotels() {
-      const hotelsDO = createHotels()
+      const hotelsDO = getHotels()
       this.hotels = hotelsDO
       return hotelsDO
     }

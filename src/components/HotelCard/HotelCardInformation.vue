@@ -21,14 +21,14 @@ defineProps({
     <h3>{{ website }}</h3>
   </div>
   <div class="item">
-    <h3>Regular Price:</h3>
+    <h3>Weekend Price:</h3>
     <h3 v-for="(price, index) in weekendPrice" :key="price">
       ${{ price }}
       <template v-if="index < weekdayPrice.length - 1"> - </template>
     </h3>
   </div>
   <div class="item">
-    <h3>Reward Price:</h3>
+    <h3>Weekday Price:</h3>
     <h3 v-for="(price, index) in weekdayPrice" :key="price">
       ${{ price }}
       <template v-if="index < weekdayPrice.length - 1"> - </template>

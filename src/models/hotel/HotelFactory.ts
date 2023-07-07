@@ -1,5 +1,5 @@
-import type { Hotel } from '@/models/hotel/Hotel'
-export abstract class HotelFactory {
+import { Hotel } from '@/models/hotel/Hotel'
+export class HotelFactory {
   createHotel(
     id: string,
     name: string,
@@ -10,6 +10,6 @@ export abstract class HotelFactory {
     weekdayPrice: number[],
     weekendPrice: number[]
   ): Hotel {
-    throw new Error('Implements createHotel method in subclasses')
+    return new Hotel(id, name, location, phone, website, rate, weekdayPrice, weekendPrice)
   }
 }
