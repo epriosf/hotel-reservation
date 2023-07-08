@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import type { BookingPrice } from '@/models/hotel/interfaces/Hotel'
+
 defineProps({
   location: { type: String, required: true },
   phone: { type: String, required: true },
   website: { type: String, required: true },
-  weekdayPrice: { type: Array as () => number[], required: true },
-  weekendPrice: { type: Array as () => number[], required: true }
+  weekdayPrice: { type: Object as () => BookingPrice, required: true },
+  weekendPrice: { type: Object as () => BookingPrice, required: true }
 })
 </script>
 <template>
@@ -22,17 +24,15 @@ defineProps({
   </div>
   <div class="item">
     <h3>Weekend Price:</h3>
-    <h3 v-for="(price, index) in weekendPrice" :key="price">
-      ${{ price }}
-      <template v-if="index < weekdayPrice.length - 1"> - </template>
-    </h3>
+    <h3>${{ weekendPrice.regularPrice }}</h3>
+    <h3>-</h3>
+    <h3>${{ weekendPrice.rewardPrice }}</h3>
   </div>
   <div class="item">
     <h3>Weekday Price:</h3>
-    <h3 v-for="(price, index) in weekdayPrice" :key="price">
-      ${{ price }}
-      <template v-if="index < weekdayPrice.length - 1"> - </template>
-    </h3>
+    <h3>${{ weekdayPrice.regularPrice }}</h3>
+    <h3>-</h3>
+    <h3>${{ weekdayPrice.rewardPrice }}</h3>
   </div>
 </template>
 <style scoped lang="scss">

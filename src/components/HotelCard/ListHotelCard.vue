@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import HotelCard from '@/components/HotelCard/HotelCard.vue'
 import { useHotelStore } from '@/stores/hotel'
-import { computed } from 'vue'
+import { onMounted, ref } from 'vue'
+import type { Hotel } from '@/models/hotel/interfaces/Hotel'
 const hotelStore = useHotelStore()
-const hotels = computed(() => hotelStore.getHotels())
+const hotels = ref<Hotel[]>([])
+
+onMounted(async () => {
+  await hotelStore.getHotels()
+  hotels.value = hotelStore.hotelsDetail
+})
 </script>
 
 <template>

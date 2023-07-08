@@ -3,15 +3,8 @@ import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import HotelCardInformation from '@/components/HotelCard/HotelCardInformation.vue'
 import TheRating from '@/components/TheRating.vue'
-interface Hotel {
-  name: string
-  location: string
-  rate: number
-  phone: string
-  website: string
-  weekdayPrice: number[]
-  weekendPrice: number[]
-}
+import type { Hotel } from '@/models/hotel/interfaces/Hotel'
+
 defineProps({
   hotel: {
     type: Object as () => Hotel,
