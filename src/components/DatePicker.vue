@@ -2,7 +2,6 @@
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue'
-import { defineEmits } from 'vue'
 const emits = defineEmits(['selected-dates'])
 const selectedDates = ref([])
 const handleDates = (dates: Date[]) => {

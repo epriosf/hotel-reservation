@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import HotelCard from '@/components/HotelCard/HotelCard.vue'
 import { useHotelStore } from '@/stores/hotel'
-import { computed, onMounted, type PropType, type Ref, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import type { Hotel, HotelCost } from '@/models/hotel/interfaces/Hotel'
 import { HotelsProducer } from '@/models/hotel/HotelProducer/HotelsProducer'
 import { FormatType } from '@/models/hotel/enums/FormatType'
 import { UserType } from '@/models/hotel/enums/UserType'
+
 const hotelStore = useHotelStore()
 const hotels = ref<Hotel[]>([])
-const selectedHotel: Ref<Hotel | null> = ref<Hotel | null>(null)
+const selectedHotel= ref<Hotel | null>(null)
 const lowCostPrice = ref<number>(0)
+
 const gridItemClasses = computed(() => ({
   'single-hotel': hotels.value.length === 1
 }))
 const props = defineProps({
   selectedDates: {
-    type: Array as PropType<Date[]>,
+    type: Array as ()=>Date[],
     default: () => []
   },
   userType: {

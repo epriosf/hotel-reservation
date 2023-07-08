@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
 import { ref } from 'vue'
 const emits = defineEmits(['toggleButton'])
 
