@@ -15,7 +15,7 @@ defineProps({
 <template>
   <BaseCard>
     <template #image>
-      <img :src="`/public/images/hotel${hotel.id}.jpg`" :alt="hotel.name" class="image" />
+      <img :src="`/images/hotel${hotel.id}.jpg`" :alt="hotel.name" class="image" />
     </template>
     <template #info>
       <div class="name">{{ hotel.name }}</div>
