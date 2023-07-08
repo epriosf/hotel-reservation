@@ -1,32 +1,32 @@
 # hotel-reservation-system
 
-A hotel chain operating in Miami wishes to offer room reservation services over the internet.
-They have three hotels in Miami: Lakewood, Bridgewood and Ridgewood. Each hotel has
-separate weekday and weekend (Saturday and Sunday) rates. There are special rates for
-rewards customer as a part of loyalty program. Each hotel has a rating assigned to it.
+A hotel chain operating in Miami wishes to offer room reservation services over the internet. They have three hotels in Miami: Lakewood, Bridgewood and Ridgewood. Each hotel has separate weekday and weekend (Saturday and Sunday) rates. There are special rates for rewards customer as a part of loyalty program. Each hotel has a rating assigned to it.
+
+## Description
+This project is a Vue application that gives users the ability to find the cheapest hotel option by specifying different dates. Also, if users are members of the rewards program, they will receive an additional discount on their reservations. The application is Developed using the latest features of Vue 3, such as the Composition API, and TypeScript has been used to add static typing and improve code security. Visual styling has been implemented using SCSS for easy customization and maintenance. In addition, the project makes use of Pinia, a library for state management in Vue, which provides a more intuitive and scalable data flow.The 'Factory Method' design pattern has been applied to make it easier to instantiate different types of hotels and adapt to the changing needs of the business. In summary, this application combines modern technologies and good development practices to offer users an easy-to-use experience and find the best hotel option at the best price.
 
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-
+## Dependencies
+1. NodeJs version 18.12.1
+2. Vue DatePicker : Component to manage dates. https://vue3datepicker.com/
+   
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
-
+Clone github repository: 
+```sh
+git clone https://github.com/epriosf/hotel-reservation.git
+```
+Change to the repository name:
+```sh
+cd hotel-reservation
+```
+Install dependencies
 ```sh
 npm install
 ```
@@ -47,22 +47,6 @@ npm run build
 
 ```sh
 npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
