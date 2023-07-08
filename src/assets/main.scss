@@ -1,9 +1,11 @@
 @import 'base.scss';
-@import "style.scss";
+@import 'style.scss';
 body {
   background-color: $background-primary-color;
   font-family: sans-serif;
+  width: 90%;
+  margin: 0 auto;
 }
 h1 {
-  color: $background-secondary-color;
+  color: $text-primary-color;
 }

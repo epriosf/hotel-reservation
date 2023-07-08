@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "Lakewood",
+    "location": "Miami",
+    "phone": "123-456-7890",
+    "website": "https://www.hoteLakewood.com",
+    "rate": 3,
+    "weekdayPrice": {
+      "regularPrice": 110,
+      "rewardPrice": 80
+    },
+    "weekendPrice": {
+      "regularPrice": 90,
+      "rewardPrice": 80
+    }
+  },
+  {
+    "id": "2",
+    "name": "Bridgewood",
+    "location": "Miami",
+    "phone": "987-654-3210",
+    "website": "https://www.hotelBridgewood.com",
+    "rate": 4,
+    "weekdayPrice": {
+      "regularPrice": 160,
+      "rewardPrice": 110
+    },
+    "weekendPrice": {
+      "regularPrice": 60,
+      "rewardPrice": 50
+    }
+  },
+  {
+    "id": "3",
+    "name": "Ridgewood",
+    "location": "Miami",
+    "phone": "987-654-5550",
+    "website": "https://www.hotelRidgewood.com",
+    "rate": 5,
+    "weekdayPrice": {
+      "regularPrice": 220,
+      "rewardPrice": 100
+    },
+    "weekendPrice": {
+      "regularPrice": 150,
+      "rewardPrice": 40
+    }
+  }
+]
