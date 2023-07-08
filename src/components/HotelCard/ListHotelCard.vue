@@ -25,14 +25,14 @@ const props = defineProps({
   }
 })
 watch(
-  () => [props.selectedDates, props.userType],
-  async ([newDates, userType]) => {
+  () => [props.selectedDates],
+  async ([newDates]) => {
     try {
       await hotelStore.getHotels()
       hotels.value = hotelStore.hotelsDetail
       const jsonProducer = new HotelsProducer(FormatType.JSON)
 
-      const booking: HotelCost = jsonProducer.getLowestCostHotel(newDates, userType, hotels.value)
+      const booking: HotelCost = jsonProducer.getLowestCostHotel(newDates, props.userType, hotels.value)
       if (booking) {
         selectedHotel.value = booking.hotel
         lowCostPrice.value = booking.price
