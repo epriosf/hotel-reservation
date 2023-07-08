@@ -13,9 +13,9 @@
   box-sizing: border-box;
   color: $primary-color;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
-  height: 40px;
+  height: 50px;
   margin: 0;
   padding: 10px 16px;
   text-align: center;

@@ -15,7 +15,7 @@ defineProps({
 <template>
   <BaseCard>
     <template #image>
-      <img src="../../assets/hotel3.jpg" alt="photo" class="image" />
+      <img :src="`/public/images/hotel${hotel.id}.jpg`" :alt="hotel.name" class="image" />
     </template>
     <template #info>
       <div class="name">{{ hotel.name }}</div>
@@ -31,7 +31,7 @@ defineProps({
     <template #price>
       <div class="price">
         <BaseButton>
-          <template #text> View Info </template>
+          <template #text> Hotel information </template>
         </BaseButton>
       </div>
     </template>
@@ -48,6 +48,6 @@ defineProps({
   font-family: 'Roboto Light';
   font-size: 30px;
   margin: 10px;
-  color: $background-secondary-color;
+  color: $text-primary-color;
 }
 </style>

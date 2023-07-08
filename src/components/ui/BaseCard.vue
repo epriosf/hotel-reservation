@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <div class="card">
     <div class="container">
@@ -17,35 +16,35 @@
 <style lang="scss">
 @import './../../assets/main.scss';
 .card {
-  border: 1px solid #e8f6ef;
-  box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
   border-radius: 15px;
   height: 500px;
 }
 .container {
   display: grid;
-  grid-template-columns: 3fr 0.9fr;
-  grid-template-rows: 9fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   grid-auto-flow: row;
   grid-template-areas:
-    'image info'
-    'image price';
-  height: 100%;
-  width: 100%;
+    'image image'
+    'info info'
+    'price price';
+  margin-bottom: 10%;
   .image {
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 15px 15px 0px 0px;
     grid-area: image;
-    background-color: $background-secondary-color;
+    background-color: $text-primary-color;
     width: 100%;
-    height: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
   }
   .hotel-info {
-    border-radius: 0px 15px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     grid-area: info;
     background-color: $primary-color;
   }
   .price {
-    border-radius: 0px 0px 15px 0px;
+    border-radius: 0px 0px 15px 15px;
     grid-area: price;
     background-color: $primary-color;
   }

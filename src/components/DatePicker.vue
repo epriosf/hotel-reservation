@@ -2,12 +2,17 @@
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue'
-const date = ref()
+import { defineEmits } from 'vue'
+const emits = defineEmits(['selected-dates'])
+const selectedDates = ref([])
+const handleDates = (dates: Date[]) => {
+  emits('selected-dates', dates)
+}
 </script>
 <template>
   <div class="date-picker">
     <VueDatePicker
-      v-model="date"
+      v-model="selectedDates"
       multi-dates
       multi-dates-limit="10"
       placeholder="Select booking dates"
@@ -15,6 +20,7 @@ const date = ref()
       :max-date="new Date('2024/07/07')"
       :enable-time-picker="false"
       prevent-min-max-navigation
+      @update:model-value="handleDates"
     ></VueDatePicker>
   </div>
 </template>
