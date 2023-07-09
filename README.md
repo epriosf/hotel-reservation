@@ -18,6 +18,8 @@ In summary, this application combines modern technologies and development best p
 
 ## Deployment
 link: https://shiny-unicorn-2458ca.netlify.app
+![image](https://github.com/epriosf/hotel-reservation/assets/60623072/febc09fe-8981-4c0d-a7c0-de45eb3a38ed)
+
 ## Images
 ![image](https://github.com/epriosf/hotel-reservation/assets/60623072/e4e1a9e1-ba8f-4901-a75b-972fa25a75e4)
 ![image](https://github.com/epriosf/hotel-reservation/assets/60623072/c5dcb49e-3f13-446c-b87f-bea38fce3666)
