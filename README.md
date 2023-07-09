@@ -13,6 +13,9 @@ To ensure code quality, unit tests have been implemented using Vitest, a testing
 
 In summary, this application combines modern technologies and development best practices to deliver a user-friendly experience in finding the best hotel option at the most competitive prices. Vitest ensures code quality through comprehensive unit testing, while Netlify streamlines deployment and management, facilitating efficient delivery and an enhanced experience for end users.
 
+## Color palette implemented
+![image](https://github.com/epriosf/hotel-reservation/assets/60623072/9b26c8d3-96cc-4dea-b08c-c8e44cc83c1a)
+
 ## Deployment
 link: https://shiny-unicorn-2458ca.netlify.app
 ## Images
